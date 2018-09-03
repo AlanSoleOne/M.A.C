@@ -1,0 +1,116 @@
+/* GLOBALES */
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-image: url('../img/fondo.jpg');
+
+}
+
+@media (min-width: 900px) {
+    body {
+        background-size: cover;
+        background-repeat: no-repeat;
+    }    
+}
+
+.container {
+    width: 100%;    
+}
+
+
+/*BARRA INICIO DE SESIÓN*/
+
+.inicio-sesion {
+    margin-top: 30px;
+    position: absolute;
+    right: 12px;
+}
+
+.inicio-sesion a {
+    color: white;
+    background-color: #00afa0;
+    padding: 12px;
+    text-decoration: none;
+    border-radius: 7px;
+    border: solid 2px #00afa0;
+    display: inline-block;
+    transition: 0.3s ease-in-out;
+}
+
+.inicio-sesion a:first-child{    
+    background-color: rgba(0, 175, 160, 0.2);
+    font-weight: 400;
+    margin-right: 12px;
+}
+
+.inicio-sesion a:first-child:hover{    
+    background-color: rgba(0, 175, 160, 0.5);
+    font-weight: 400;
+    margin-right: 12px;
+    transform: scale(1.03);
+}
+
+.inicio-sesion a:last-child:hover{
+    transform: scale(1.03);
+}
+
+
+/*MAIN INICIO*/
+
+.main-slogan {
+    color: rgb(238, 238, 238);
+    width: 80%;
+    margin: 0 auto;
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    text-shadow: 1px 1px 1px rgb(34, 34, 34);
+}
+
+.titulo {
+    text-transform: uppercase;
+    font-size: 2.6em;
+    padding-bottom: 30px;
+    font-weight: 500;
+}
+
+.slogan {
+    font-size: 2.1em;
+    font-weight: 100;
+}
+
+header {
+    position: absolute;
+    left: 15px;
+    top: 20px;
+}
+
+.logo {
+    display: block;
+    width: 150px;
+}
+
+.logo-mobile {
+    display: none;
+}
+
+@media (max-width: 450px) {
+    .logo {
+        display: none;
+    }
+
+    header  {
+        left:5px;
+    }
+
+    .logo-mobile {
+        display: block;
+        width: 70px;
+    }
+}
