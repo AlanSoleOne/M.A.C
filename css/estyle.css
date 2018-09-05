@@ -1,13 +1,12 @@
 * { 
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
+   
     box-sizing: border-box; 
 margin: 0;
 padding: 0;
 
 }
 body {
-    background-color: #0000ff21;
+    background-image: url('../img/fondo.jpg');
     background-attachment: fixed;
 }
 
@@ -38,7 +37,7 @@ border-radius: 3px;
 
 .container .form .form-label{
 display: block;
-color: #ff851b;
+color: #00afa0;
 font-size: 16px;
 font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 position: relative;
@@ -49,7 +48,7 @@ position: relative;
 background: silver;
 border: none;
 outline: none;
-border-bottom: 2px solid #ff851b;
+border-bottom: 2px solid #00afa0;
 width: 100%;
 padding: 12px;
 margin-bottom: 20px;
@@ -63,7 +62,7 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubun
     width: 100%;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     outline: none;
-    background: #ff851b;
+    background:#00afa0;
     font-size: 16px;
     border: none;
     color: #fff;
@@ -74,7 +73,7 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubun
 }
 
 .container .form .btn-sublim  :hover{
-background: #f29718;
+background:#00afa0 ;
 }
 
 
