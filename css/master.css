@@ -4,6 +4,10 @@
     padding: 0;
 }
 
+li{
+    display: inline-flex;
+}
+
 body{
 font-family: 'Raleway', sans-serif;
 background-image: url('../img/fondo.jpg');
@@ -16,7 +20,10 @@ h1{
 }
 
 .container{
-    width: 100%;
+    width: 97%;
+    margin-left: 18px;
+    padding-left: 24px;
+    background-color: rgba(0,0,0,.5);
 }
 
 .logo {
@@ -54,5 +61,14 @@ a:active {
     body {
         background-size: cover;
         background-repeat: no-repeat;
-    }    
+        
+    }
+     
+}
+
+@media (max-width: 400px) {
+    .logo{
+        display: flex;
+        margin: auto;
+    }
 }
