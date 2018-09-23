@@ -7,13 +7,10 @@
 </head>
     <body>
     <header>
-        <a href="index2.html">
+        <a href="index.php">
             <img class="logo" src="img/logo.png" alt="">
-            </a>
-            
-           
-
-          </header>
+            </a>       
+    </header>
 
     <div class="container">
      <form class="form" action="" method="">

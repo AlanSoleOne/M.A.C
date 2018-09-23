@@ -72,3 +72,9 @@ a:active {
         margin: auto;
     }
 }
+
+/*ERRORES EN FOMRULARIO*/
+
+.errores {
+    color: white;
+}
