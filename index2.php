@@ -21,9 +21,15 @@
             <img class="logo-mobile" src="img/logo-mobile.png" alt="">
         </header>
             <nav class="inicio-sesion">
+<<<<<<< HEAD:index2.php
                 <a href="faq.php">Preguntas frecuentes</a>
                 <a class="boton-inicio" href="usuario.php">Iniciar sesión</a>
                 <a href="formulario.php">REGISTRARSE</a>
+=======
+                <a class="boton-inicio" href="faq.php">Preguntas frecuentes</a>
+                <a class="boton-inicio" href="usuario.html">Iniciar sesión</a>
+                <a href="formulario.html">REGISTRARSE</a>
+>>>>>>> f4b84e53935ece3b40905bd1004541b507247dbd:index.html
             </nav>
 
 
