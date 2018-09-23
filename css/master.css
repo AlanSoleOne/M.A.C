@@ -1,0 +1,74 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    display: inline-flex;
+}
+
+body{
+font-family: 'Raleway', sans-serif;
+background-image: url('../img/fondo.jpg');
+color: white;
+}
+
+h1{
+    text-align: center;
+    text-decoration: underline #00afa0;
+}
+
+.container{
+    width: 97%;
+    margin-left: 18px;
+    padding-left: 24px;
+    background-color: rgba(0,0,0,.5);
+}
+
+.logo {
+    display: inline-block;
+    width: 150px;
+}
+
+.logo-mobile {
+    display: none;
+}
+
+a:link {
+    color: #00afa0;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:visited {
+    color: pink;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+}
+a:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+
+@media (min-width: 900px) {
+    body {
+        background-size: cover;
+        background-repeat: no-repeat;
+        
+    }
+     
+}
+
+@media (max-width: 400px) {
+    .logo{
+        display: flex;
+        margin: auto;
+    }
+}
