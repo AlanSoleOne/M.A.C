@@ -22,8 +22,8 @@
         </header>
             <nav class="inicio-sesion">
                 <a href="faq.php">Preguntas frecuentes</a>
-                <a class="boton-inicio" href="usuario.html">Iniciar sesión</a>
-                <a href="formulario.html">REGISTRARSE</a>
+                <a class="boton-inicio" href="usuario.php">Iniciar sesión</a>
+                <a href="formulario.php">REGISTRARSE</a>
             </nav>
 
 

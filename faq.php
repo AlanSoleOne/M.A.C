@@ -13,7 +13,7 @@
 <body>
     
         <header>
-        <a href="index.html">
+        <a href="index2.php">
             <img class="logo" src="img/logo.png" alt="">
             </a>
             

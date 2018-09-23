@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,11 +14,14 @@
     <title>Formulario</title>
 </head>
 <body>
-        <nav class="inicio-sesion">
-                <a href="faq.php">Preguntas frecuentes</a>
-                <a class="boton-inicio" href="usuario.php">Iniciar sesión</a>
-                <a href="index.php">pagina principal</a>
-            </nav>
+<header>
+        <a href="index2.php">
+            <img class="logo" src="img/logo.png" alt="">
+            </a>
+            
+            >
+
+          </header>
 
 
     <div class="container">
@@ -27,7 +37,10 @@
 
         <label for="nombre" class="form-label" >Direccion</label>
          <input type="text" id="direccion" class="form-input" placeholder="Escriba su direccion" name="direccion">
-
+                                
+         <label class="form-label" for="avatar">Foto Perfil</label>
+         <input class="form-imput" type="file" name="avatar">
+                
         
                  <div>
                     <label class="form-label" for="password">Password: </label>
@@ -62,13 +75,13 @@
                     <label class="id" for="confirm">Acepto los terminos y condiciones.</label>
                 </div>
                 <div >
-                    <button class="btn-sublim"  type="submit" >Registrarme</button>
+                    <button class="btn-sublim"  type="submit" >Registrarse</button>
                 </div>
 
             </form>
         </div>
         
-        <?php include_once  ('scripts.php'); ?>
+        
 
 
 </body>
