@@ -25,8 +25,10 @@ body {
 }
 
 
-/*BARRA INICIO DE SESIÓN*/
 
+
+
+/*
 .inicio-sesion {
     margin-top: 30px;
     position: absolute;
@@ -63,7 +65,7 @@ body {
 .boton-inicio:hover{
     transform: scale(1.03);
 }
-
+*/
 
 /*MAIN INICIO*/
 
@@ -89,35 +91,6 @@ body {
     font-weight: 100;
 }
 
-header {
-    position: absolute;
-    left: 15px;
-    top: 20px;
-}
-
-.logo {
-    display: block;
-    width: 150px;
-}
-
-.logo-mobile {
-    display: none;
-}
-
-@media (max-width: 450px) {
-    .logo {
-        display: none;
-    }
-
-    header  {
-        left:5px;
-    }
-
-    .logo-mobile {
-        display: block;
-        width: 70px;
-    }
-}
 
 
 /* ERRORES FORMULARIO */

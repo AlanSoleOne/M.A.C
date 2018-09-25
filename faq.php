@@ -4,22 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Preguntas frecuentes</title>
     <link rel="stylesheet" href="css/master.css">
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/nav-bar.css">  
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700" rel="stylesheet">
     <link rel="icon" href="favicon.png" type="image/x-icon" />
+    <title>Preguntas frecuentes</title>
 </head>
 <body>
     
-        <header>
-        <a href="index.php">
-            <img class="logo" src="img/logo.png" alt="">
-            </a>
-            
-            <img class="logo-mobile" src="img/logo-mobile.png" alt="">
+       
+    <?php require 'nav-bar.php'; ?>
 
-          </header>
     <div class="container">
             
        

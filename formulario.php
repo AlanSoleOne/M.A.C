@@ -21,14 +21,12 @@ if($_POST) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estyle.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/nav-bar.css">  
     <title>Formulario</title>
 </head>
 <body>
-    <header>
-        <a href="index.php">
-            <img class="logo" src="img/logo.png" alt="">
-        </a>
-    </header>
+   
+    <?php require 'nav-bar.php'; ?>
 
 
     <div class="container">
