@@ -6,7 +6,9 @@ if($_POST) {
 
     $errores = validar($_POST);
     if(count($errores) == 0) {
-        echo "Registro ok";
+        $nuevoUsuario = crearUsuario($_POST);
+        guardarUsuario($nuevoUsuario);
+        header('Location: usuario.php');
     }
 
 }
@@ -77,7 +79,7 @@ if($_POST) {
                     </div>
                 <?php endif; ?>
                 <input class="" type="checkbox" name="confirm" value="">
-                <label class="id" for="confirm">Acepto los terminos y condiciones.</label>
+                <label class="id" for="confirm">Acepto los términos y condiciones.</label>
 
                 <button class="btn-sublim"  type="submit">Registrarse</button>
 
