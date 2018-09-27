@@ -6,12 +6,12 @@ if($_POST) {
 
     $errores = [];
     $email = $_POST['email'];
+    $password = $_POST['password'];
     if(buscarEmail($email) == false)
     {
         $errores['email'] = "El email no pertenece a un usuario registrado";
     }
-
-    $password = $_POST['password'];
+    
     if($password == "") {
         $errores['password'] = "Por favor, ingresar una contraseña";
     } elseif(validarPassword($password) == false)

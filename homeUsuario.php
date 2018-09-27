@@ -35,6 +35,7 @@ if(isset($_SESSION['email'])) {
 
     <?php require 'nav-bar.php'; ?>
 
+<<<<<<< HEAD
     
 
     
@@ -57,6 +58,10 @@ if(isset($_SESSION['email'])) {
             </div>
             
         </div>
+=======
+    <h1 class="main-slogan saludo-inicial">Bienvenido!</h1>
+    <div class="avatar"> <img src="" alt=""> </div>
+>>>>>>> 555cb600c59acb47b2398ab6071005f20a0727dc
     
 </body>
 </html>

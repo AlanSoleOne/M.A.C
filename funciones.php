@@ -44,7 +44,28 @@ function validar($data) {
         
 }
 
-
+function validarAvatar($data)
+{ //recibe POST
+    $errores = [];
+    $username = $data['nombre']; //asignamos el username que llega por post a la viarable
+    if($_FILES['avatar']['error'] == UPLOAD_ERR_OK)
+    {
+        $origen = $_FILES['avatar']['tmp_name']; //el origen temporal del archivo que se va a subir
+        $ext = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION); //extension
+        if($ext != "jpg" && $ext != "png" && $ext != "jpeg")
+        { //si está todo bien, no entra al if
+            $errores['avatar'] = "Sólo acepto formato JPG, PNG ó JPEG.";
+            return $errores;
+        }
+        $destino = dirname(__FILE__); //me decuelve el path del archivo desde donde la llamo 
+        $destino = $destino . "/img/" . "/foto-perfiles/"; //entro a la carpeta IMG
+        $destino = $destino . "perfil" . $username . "." . $ext; //el destino de la imagen con el nombre comleto y la extensión
+        move_uploaded_file($origen, $destino);
+    } else {
+        $errores['avatar'] = "Hubo un error al procesar el archivo";
+    }
+    return $errores;
+}
 
 function old($data)
 {
@@ -59,7 +80,7 @@ function crearUsuario($data)
     $usuario =
     [
         'id' => idUsuario(),
-        'username' => $data['nombre'],
+        'nombre' => $data['nombre'],
         'email' => $data['email'],
         'password' => password_hash($data['password'], PASSWORD_DEFAULT),
     ];

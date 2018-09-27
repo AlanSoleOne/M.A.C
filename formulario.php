@@ -5,12 +5,14 @@ require 'funciones.php';
 if($_POST) {
 
     $errores = validar($_POST);
+    if($_FILES['avatar']['error'] == 0) {
+        validarAvatar($_POST);
+    }    
     if(count($errores) == 0) {
         $nuevoUsuario = crearUsuario($_POST);
         guardarUsuario($nuevoUsuario);
         header('Location: homeUsuario.php');
     }
-
 }
 
 
