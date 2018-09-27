@@ -17,6 +17,7 @@
     <?php require 'nav-bar.php'; ?>
 
     <h1 class="main-slogan saludo-inicial">Bienvenido!</h1>
+    <div class="avatar"> <img src="" alt=""> </div>
     
 </body>
 </html>
