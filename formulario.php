@@ -8,9 +8,38 @@ if($_POST) {
     if(count($errores) == 0) {
         $nuevoUsuario = crearUsuario($_POST);
         guardarUsuario($nuevoUsuario);
-        header('Location: usuario.php');
+        header('Location: homeUsuario.php');
     }
 
+}
+
+
+if($_POST) {
+
+    $errors = validate($_POST);
+    
+    $usuario = createUser($_POST);
+    
+    if($_FILES['avatar']['error'] == 0) {
+        
+        $avatarErrors = validateAvatar($_POST);
+        
+        $usuario['avatar'] = photoPath($_POST);
+        
+        if(!empty($avatarErrors)) {
+            
+            $errors = array_merge($errors, $avatarErrors); 
+        }
+        var_dump($_FILES)  ; 
+    }
+    
+    
+    if(count($errors) == 0) {  
+       
+        saveUser($usuario);
+        
+        redirect('index.php');
+    }
 }
 
 
@@ -22,7 +51,7 @@ if($_POST) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estyle.css">
-    <link rel="stylesheet" href="css/styles.css">
+   
     <link rel="stylesheet" href="css/nav-bar.css">  
     <title>Formulario</title>
 </head>

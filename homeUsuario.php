@@ -1,3 +1,22 @@
+<?php
+
+
+require 'funciones.php';
+
+if(isset($_SESSION['email'])) {
+    
+    $user = dbEmailSearch($_SESSION['email']);
+   
+    $username = $user['username'];
+    
+    if(array_key_exists('avatar', $user)){
+        
+        $avatar = $user['avatar'];
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +35,28 @@
 
     <?php require 'nav-bar.php'; ?>
 
-    <h1 class="main-slogan saludo-inicial">Bienvenido!</h1>
+    
+
+    
+    <div class=>
+                    
+                    <?php if(!isset($user['avatar'])):?>
+                    
+                    <img class= src="img/perfil.jpg" alt="avatar default">
+                    <?php else: ?>
+                   
+                    <img class= src="img/<?=$avatar?>" alt="avatar">
+                    <?php endif;?>
+
+                    
+                    <div class="main-slogan saludo-inicial">
+                        <h2 class="main-slogan saludo-inicial">Bienvenido!</h2>
+                        
+                    </div>
+                </div>
+            </div>
+            
+        </div>
     
 </body>
 </html>
