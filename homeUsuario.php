@@ -1,3 +1,9 @@
+<?php
+
+require 'funciones.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,8 +22,9 @@
 
     <?php require 'nav-bar.php'; ?>
 
-    <h1 class="main-slogan saludo-inicial">Bienvenido!</h1>
-    <div class="avatar"> <img src="" alt=""> </div>
+    <h1 class="main-slogan saludo-inicial"> Bienvenido! </h1>
+
+    <div class="avatar"> <img src="img/foto-perfiles/perfil-blanco.png" alt=""> </div>
     
 </body>
 </html>
