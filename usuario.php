@@ -1,68 +1,55 @@
 <?php
 
-require 'funciones.php';
+                              // TERMINADO
+//require 'funciones.php';
+require 'loader.php';
 
-if($_POST) {
-
-    $errores = [];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    if(buscarEmail($email) == false)
-    {
-        $errores['email'] = "El email no pertenece a un usuario registrado";
-    }
-    
-    if($password == "") {
-        $errores['password'] = "Por favor, ingresar una contraseña";
-    } elseif(validarPassword($password) == false)
-    {
-        $errores['password'] = "La contraseña no coincide con el email ingresado";
-    } 
-    
-    if(count($errores) == 0)
-    {            
-        header('Location: homeUsuario.php');
-    }
-
+if(Auth::check()) {
+    redirect('homeUsuario.php');
 }
 
+if($_POST) {
+    $usuarioArray = $db->emailDbSearch($_POST['email']);
+    $user = new User($usuarioArray['username'], $usuarioArray['email'], $usuarioArray['password'], $usuarioArray['role']);
+    $arrayErr = [];
+
+    if($usuarioArray !== null) {
+        $error = "Nombre de usuario o pass incorrectos";
+        !Validate::loginValidate($_POST['password'], $user) ? $arrayErr['login'] = $error : Auth::login($user);
+        redirect('homeUsuario.php');
+
+    }
+}
 ?>
 
 <!DOCTYPE HTML>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/estyle.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/nav-bar.css">  
-    <title>Formulario de Contactos</title>
-</head>
+
+<?php require 'head.php';?>
+
     <body>
+    
    
 
-    <?php require 'nav-bar.php'; ?>
+    <?php require 'navbar.php'; ?>
 
         <div class="container">
             <form class="form" action="" method="post">
-                <div class="from-header">
-                    <h1 class="form-title">Iniciar sesión</h1>
+                <h1 class="form-title">Iniciar sesión</h1>
 
-                    <?php if(isset($errores['email'])): ?>
-                                <div class="errores">
-                                    <?=$errores['email']; ?>
-                                </div>
-                    <?php endif; ?>       
-                    <label for="nombre" class="form-label">Email:</label>     
-                    <input type="text" id="nombre" class="form-input" placeholder="Email" name="email" value="<?= isset($errores['email']) ? "" : old('email'); ?>">
+                     <?php if(!empty($arrayErr)): ?>
+                     <div class="errores">
+                     <strong><?=$arrayErr['login']; ?></strong> 
+                     </div>
+                     <?php endif; ?>      
+                    
+                 <label for="nombre" class="form-label">Email:</label>     
+                 <input class="form-input"  type="email" name="email" id="mail" value="">
+                    
+                    
 
-                    <?php if(isset($errores['password'])): ?>
-                                <div class="errores">
-                                    <?=$errores['password']; ?>
-                                </div>
-                    <?php endif; ?>      
-                    <label for="contraseña" class="form-label">Contraseña:</label>
-                    <input class="form-input" type="password" name="password" placeholder="contraseña">
+                 <label for="contraseña" class="form-label">Contraseña:</label>
+                 <input class="form-input" type="password" name="password" id="password" value="">
 
                     <input class="btn-sublim" type="submit" value="Entrar">
 
@@ -70,7 +57,7 @@ if($_POST) {
                     <br>
                     <a class="item-menu" href="formulario.php">Registrarme</a>
 
-                </div>   
+              </div>   
             </form>
         </div>      
     </body>
