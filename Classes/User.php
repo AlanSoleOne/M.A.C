@@ -8,7 +8,7 @@ class User {
     private $avatar;
     private $role = 1;
 
-    public function __construct(String $username, String $email, String $password, String $avatar = null)
+    public function __construct( $username,  $email,  $password,  $avatar = null)
     {
             $this->username = $username;
             $this->email = $email;

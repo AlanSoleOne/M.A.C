@@ -3,7 +3,7 @@
     require 'loader.php';
 
     if (Auth::guest()) {
-        redirect('usuario.php');
+        redirect('index.php');
     }
 
     if(isset($_SESSION['email'])) {

@@ -6,7 +6,7 @@ require 'loader.php';
 
 
 if(Auth::check()) {
-    redirect('index.php');
+    redirect('homeUsuario.php');
 }
 
 if ($_POST) {

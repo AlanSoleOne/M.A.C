@@ -3,4 +3,4 @@
 require 'loader.php';
 
 Auth::logout();
-redirect('usuario.php');
+redirect('index.php');

@@ -1,7 +1,5 @@
 <?php
 
-                              // TERMINADO
-//require 'funciones.php';
 require 'loader.php';
 
 if(Auth::check()) {
@@ -16,7 +14,7 @@ if($_POST) {
     if($usuarioArray !== null) {
         $error = "Nombre de usuario o pass incorrectos";
         !Validate::loginValidate($_POST['password'], $user) ? $arrayErr['login'] = $error : Auth::login($user);
-        redirect('homeUsuario.php');
+        redirect('login.php');
 
     }
 }

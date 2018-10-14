@@ -2,24 +2,18 @@
 
 <div> <img class="logo" src="img/logo.png" alt=""> </div>
 
-<nav class="nav-bar">
-    <a href="index.php" class="item-menu">HOME</a>
-
-    <a href="faq.php" class="item-menu">PREGUNTAS FRECUENTES</a>
-    
-</nav>
-<nav class="nav-mobile">
-    <img class="menu-hamburguesa" src="img/menu.svg" alt="">
-</nav>
 
         <?php if(Auth::guest()): ?>
 
-            <a href="usuario.php" class="boton-vacio">Iniciar sesión</a>>
+            <a href="faq.php" class="boton-vacio">Preguntas Frecuentes</a>
+            <a href="usuario.php" class="boton-vacio">Iniciar sesión</a>
             <a href="formulario.php"class="boton-registro">REGISTRARME</a>
 
         <?php else: ?>
-
-            <a href="usuario.php" class="boton-vacio">cerrar sesión</a>
+      
+            <a href="homeUsuario.php" class="boton-vacio">ventas</a>
+            <a href="homeUsuario.php" class="boton-vacio">cambios</a>
+            <a href="logout.php" class="boton-vacio">cerrar secion</a>
 
         <?php endif; ?>
             
@@ -33,9 +27,8 @@
             
         </ul>
     </div>
+   
 </nav>
-<nav class="nav-mobile">
-            <img class="menu-hamburguesa" src="img/menu.svg" alt="">
-        </nav>
+
 
 </header>
