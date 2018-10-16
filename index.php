@@ -1,21 +1,33 @@
+<?php
+
+require 'loader.php';
+
+if(Auth::check()) {
+    redirect('perfil.php');
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
-
-    <?php require 'head.php'; ?>
-
+<head>
+    <meta name="viewport">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/nav-bar.css">    
+    <link rel="stylesheet" href="css/styles.css">    
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700" rel="stylesheet">
+    <link rel="icon" href="favicon.png" type="image/x-icon" />
+    <title>Stickear. Tu universo de figuritas</title>
+</head>
 <body>
 
-<header class="menu">
+    <div class="container"></div> <!-- INICIO CONTENEDOR GENERAL -->
+        
 
-<div> <img class="logo" src="img/logo.png" alt=""> </div>
-
-
-<nav class="nav-mobile">
-    <img class="menu-hamburguesa" src="img/menu.svg" alt="">
-</nav>
-            <a href="faq.php" class="boton-vacio">Preguntas Frecuentes</a>
-            <a href="usuario.php" class="boton-vacio">Iniciar sesión</a>
-            <a href="formulario.php"class="boton-registro">REGISTRARME</a>
+        <?php require 'nav-bar.php'; ?>
         
 
         <main>
@@ -29,6 +41,8 @@
             
         </footer>
 
+        
+    </div> <!-- FIN CONTENEDOR GENERAL -->
     
 </body>
 </html>

@@ -1,6 +1,5 @@
 <?php
 
-// Clase Auth (por "Authentication")
 class Auth
 {
     public static function set()
@@ -9,7 +8,7 @@ class Auth
             session_start();
         }
     }
-    public static function login(User $user)
+    public static function login(Usuario $user)
     {
         $email = $user->getEmail();
         $_SESSION['email'] = $email;

@@ -9,7 +9,6 @@
 body {
     font-family: 'Raleway', sans-serif;
     background-image: url('../img/fondo.jpg');
-
 }
 
 
@@ -22,6 +21,13 @@ body {
 
 .container {
     width: 100%;    
+}
+
+
+.avatar-usuario {
+    display: block;
+    width: 200px;
+    margin-left: 100px;
 }
 
 
@@ -110,8 +116,3 @@ body {
 
 
 /* AVATAR */
-
-img.avatar {
-    display: block;
-    width: 100px;
-}

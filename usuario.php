@@ -1,53 +1,63 @@
 <?php
 
+//require 'funciones.php';
 require 'loader.php';
 
 if(Auth::check()) {
-    redirect('homeUsuario.php');
+    redirect('perfil.php');
 }
 
 if($_POST) {
     $usuarioArray = $db->emailDbSearch($_POST['email']);
-    $user = new User($usuarioArray['username'], $usuarioArray['email'], $usuarioArray['password'], $usuarioArray['role']);
+    $user = new Usuario($usuarioArray['usuario'], $usuarioArray['email'], $usuarioArray['password']);
     $arrayErr = [];
 
     if($usuarioArray !== null) {
         $error = "Nombre de usuario o pass incorrectos";
-        !Validate::loginValidate($_POST['password'], $user) ? $arrayErr['login'] = $error : Auth::login($user);
-        redirect('login.php');
-
+        !Validar::validarLogin($_POST['password'], $user) ? $arrayErr['login'] = $error : Auth::login($user);
     }
+
+    if(count($arrayErr) == 0) {
+        redirect('homeUsuario.php');
+    }
+
+    
 }
+
 ?>
 
 <!DOCTYPE HTML>
 <html lang="es">
-
-<?php require 'head.php';?>
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estyle.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/nav-bar.css">  
+    <title>Formulario de Contactos</title>
+</head>
     <body>
-    
    
 
-    <?php require 'navbar.php'; ?>
+    <?php require 'nav-bar.php'; ?>
 
         <div class="container">
             <form class="form" action="" method="post">
-                <h1 class="form-title">Iniciar sesión</h1>
+                <div class="from-header">
+                    <h1 class="form-title">Iniciar sesión</h1>
 
-                     <?php if(!empty($arrayErr)): ?>
-                     <div class="errores">
-                     <strong><?=$arrayErr['login']; ?></strong> 
-                     </div>
-                     <?php endif; ?>      
+                    <?php if(!empty($arrayErr)): ?>                        
+                        <div class="errores">
+                            <?=$arrayErr['login']; ?>
+                        </div>
+                    <?php endif; ?>
                     
-                 <label for="nombre" class="form-label">Email:</label>     
-                 <input class="form-input"  type="email" name="email" id="mail" value="">
-                    
-                    
+                    <label for="nombre" class="form-label">Email:</label>     
+                    <input type="text" id="nombre" class="form-input" placeholder="Email" name="email" value="">
 
-                 <label for="contraseña" class="form-label">Contraseña:</label>
-                 <input class="form-input" type="password" name="password" id="password" value="">
+                    
+                    <label for="contraseña" class="form-label">Contraseña:</label>
+                    <input class="form-input" type="password" name="password" placeholder="contraseña">
 
                     <input class="btn-sublim" type="submit" value="Entrar">
 
@@ -55,7 +65,7 @@ if($_POST) {
                     <br>
                     <a class="item-menu" href="formulario.php">Registrarme</a>
 
-              </div>   
+                </div>   
             </form>
         </div>      
     </body>

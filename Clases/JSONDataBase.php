@@ -1,7 +1,6 @@
 <?php
-require 'DB.php';
 
-class JSONDB extends DB
+Class JSONDataBase extends DataBase
 {
 
     private $file;
@@ -58,32 +57,18 @@ class JSONDB extends DB
 
     }
 
-    public function createUser(User $user)
+    public function createUser(Usuario $usuario)
     {
         $usuario = [
-            'username' => $user->getUsername(),
-            'email' => $user->getEmail(),
-            'password' => password_hash($user->getPassword(), PASSWORD_DEFAULT),
-            'role' => $user->getRole()
+            'usuario' => $usuario->getUsuario(),
+            'email' => $usuario->getEmail(),
+            'password' => password_hash($usuario->getPassword(), PASSWORD_DEFAULT),
+            'avatar' => $usuario->getAvatar()
         ];
 
         $usuario['id'] = $this->idGenerate();
 
         return $usuario;
-
     }
 
-  
-    public function getFile()
-    {
-        return $this->file;
-    }
-
-    
-    public function setFile($file)
-    {
-        $this->file = $file;
-
-        return $this;
-    }
 }
